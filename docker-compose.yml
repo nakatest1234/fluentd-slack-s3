@@ -1,0 +1,15 @@
+version: '3'
+services:
+  fluentd:
+    container_name: fluentd
+    image: fluentd-slack-s3:latest
+    build: ./build
+    env_file:
+      ./docker.env
+    expose:
+      - "24224"
+      - "5140"
+#networks:
+#  default:
+#    external:
+#      name: nginx_proxy
